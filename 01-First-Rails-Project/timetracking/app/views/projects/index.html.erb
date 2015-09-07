@@ -1,0 +1,7 @@
+<h1>The last 10 projects</h1>
+
+<ul>
+  <% @projects.each do |project| %>
+    <li><%= project.title %> - Updated at: <%= project.updated_at.strftime('%H:%M:%S') %></li>
+  <% end %>
+</ul>

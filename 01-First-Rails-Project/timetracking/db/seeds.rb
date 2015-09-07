@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Project.destroy_all
+puts "----- XXX ------"
+
+num = 25
+
+num.times do |i|
+  Project.create(title: Faker::Address.city, description: Faker::Name.name)
+end
+
+puts "created #{num} new instances of Project"
