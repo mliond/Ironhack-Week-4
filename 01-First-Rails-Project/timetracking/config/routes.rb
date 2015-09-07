@@ -2,6 +2,6 @@ Rails.application.routes.draw do
   get '/' => 'sites#home'
   get 'contact' => 'sites#contact'
   get '/projects' => 'projects#index'
-  get '/blabla' => 'projects#blabla'
+  get '/projects/:id' => 'projects#show'
 
 end

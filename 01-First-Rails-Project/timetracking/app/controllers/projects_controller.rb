@@ -3,7 +3,11 @@ class ProjectsController < ApplicationController
     @projects = Project.last_ten_updated
   end
 
-  def blablaba
-    
+  def show
+    id = params[:id]
+    @project = Project.find_by(id: id)
+    if @project.nil?
+      render :error
+    end
   end
 end
