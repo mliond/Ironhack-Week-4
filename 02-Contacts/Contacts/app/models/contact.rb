@@ -4,5 +4,6 @@ class Contact < ActiveRecord::Base
     order(name: :asc).limit(15)
   end
 
+
 end
 
