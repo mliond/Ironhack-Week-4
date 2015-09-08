@@ -1,0 +1,23 @@
+<h1>List of contacts:</h1>
+
+<table>
+  <tr>
+    <td>Name</td>
+    <td>Address</td>
+    <td>Phone</td>
+    <td>Email</td>
+  </tr>
+  <% @contact.each do |person| %>
+    <tr>
+    <td><%= person.name %></td>
+    <td><%= person.address %></td>
+    <td><%= person.phone %></td>
+    <td><%= person.email %></td>
+    <td>
+      <form action="/contacts/edit"></form>
+    </td>
+    </tr>
+  <% end %>
+</table>
+
+<a href="/contacts/new">Create new contact</a>
