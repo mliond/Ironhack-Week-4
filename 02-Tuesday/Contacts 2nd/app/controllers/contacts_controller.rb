@@ -22,6 +22,16 @@ class ContactsController < ApplicationController
     end
   end
 
+  def update
+    id = params[:id]
+    Contact.find(id).update(favorite: true)
+    redirect_to("/contacts")
+  end
+
+  def index_favorites
+    @contact = Contact.all
+  end
+
   private
 
   def project_params

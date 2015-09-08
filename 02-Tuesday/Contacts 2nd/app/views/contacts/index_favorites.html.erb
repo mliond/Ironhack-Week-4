@@ -1,0 +1,24 @@
+<h1>List of favorite contacts:</h1>
+
+<table>
+  <tr>
+    <td>ID</td>
+    <td>Name</td>
+    <td>Address</td>
+    <td>Phone</td>
+    <td>Email</td>
+    <td>Favorite</td>
+  </tr>
+  <% @contact.each do |person| %>
+    <% if person.favorite == true %>
+      <tr>
+      <td><%= person.id %></td>
+      <td><%= person.name %></td>
+      <td><%= person.address %></td>
+      <td><%= person.phone %></td>
+      <td><%= person.email %></td>
+      <td><%= person.favorite %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>

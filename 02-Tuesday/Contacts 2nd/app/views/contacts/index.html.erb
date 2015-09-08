@@ -2,19 +2,25 @@
 
 <table>
   <tr>
+    <td>ID</td>
     <td>Name</td>
     <td>Address</td>
     <td>Phone</td>
     <td>Email</td>
+    <td>Favorite</td>
   </tr>
   <% @contact.each do |person| %>
     <tr>
+    <td><%= person.id %></td>
     <td><%= person.name %></td>
     <td><%= person.address %></td>
     <td><%= person.phone %></td>
     <td><%= person.email %></td>
+    <td><%= person.favorite %></td>
     <td>
-      <form action="/contacts/edit"></form>
+      <%= form_for person do |f| %>
+        <%= f.submit "Favorite" %>
+      <% end %>
     </td>
     </tr>
   <% end %>
