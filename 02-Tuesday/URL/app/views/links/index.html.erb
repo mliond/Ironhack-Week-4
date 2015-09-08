@@ -1,2 +1,17 @@
 <h1>Hello world!</h1>
 
+<table>
+  <tr>
+    <td>Short URL</td>
+    <td>Long URL</td>
+    <td>Visits</td>
+  </tr>
+  <% @links.each do |link| %>
+    <tr>
+      <td><%= link.short_url %></td>
+      <td><%= link.long_url %></td>
+      <td><%= link.visits.to_i %></td>
+    </tr>
+  <% end %>
+</table>
+
