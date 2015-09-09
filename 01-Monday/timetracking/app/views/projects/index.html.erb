@@ -2,7 +2,10 @@
 
 <ul>
   <% @projects.each do |project| %>
-    <li><%= link_to project.title, project_path(project) %> - Updated at: <%= project.updated_at.strftime('%H:%M:%S') %></li>
+    <li>
+      <%= link_to project.title, project_path(project) %> <%= project.description %> - Updated at: <%= project.updated_at.strftime('%H:%M:%S') %>
+      <%= link_to "Edit Project", edit_project_path(project) %>
+    </li>
   <% end %>
 </ul>
 

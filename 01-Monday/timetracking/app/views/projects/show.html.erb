@@ -5,8 +5,12 @@
 <p>Entries:</p>
 <ul>
   <% @entries.each do |entry| %>
-    <li><%= entry.hours %> hours: <%= entry.minutes %> minutes. Job: <%= entry.comment %></li>
+    <li>
+      <%= entry.hours %> hours: <%= entry.minutes %> minutes. Job: <%= entry.comment %>
+      <%= link_to "Edit", edit_entry_path(entry) %>
+    </li>
   <% end %>
 </ul>
 
 <%= link_to "Go Back", projects_path %>
+<%= link_to "Create new entry", new_project_entry_path(@project) %>
