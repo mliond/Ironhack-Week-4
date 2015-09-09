@@ -1,3 +1,12 @@
 <h1>Name: <%= @project.title %></h1>
 
 <p>Description: <%= @project.description %></p>
+
+<p>Entries:</p>
+<ul>
+  <% @entries.each do |entry| %>
+    <li><%= entry.hours %> hours: <%= entry.minutes %> minutes. Job: <%= entry.comment %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Go Back", projects_path %>

@@ -1,0 +1,62 @@
+Rails Cheatsheet
+
+How to create a new rails app:
+$ rails new app_name
+
+How to create the database: (you need to do it at the beginning)
+$ rake db:create
+
+How to run the server:
+$ rails s
+
+How to run the console:
+$ rails c
+
+How to create a controller:
+$ rails g controller ControllersName
+plural is the convention
+
+How to create a model:
+$ rails g model ModelName
+singular is the convention
+
+How to create a migration:
+$ rails g migration MigrationName
+
+How to run migration:
+$ rake db:migrate
+
+How to check routes:
+$ rake routes
+
+How to add a route:
+resources 'projects'
+verb url => 'controllerName#action'
+
+Where are the controllers:
+app/controllers
+
+Where are the models:
+app/models
+
+Where are the migrations:
+db/migrate
+
+Where is the schema:
+db/schema.rb
+
+Commands migrations:
+create_table
+add_column
+remove_column
+drop_table
+
+Embedded ruby:
+<% %>
+<%= %>
+
+Where are the seeds:
+db/seeds.rb
+
+How to run seeds:
+rake db:seed

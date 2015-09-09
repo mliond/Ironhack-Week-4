@@ -8,6 +8,9 @@ class ProjectsController < ApplicationController
     @project = Project.find_by(id: id)
     if @project.nil?
       render :error
+    else
+      @entries = @project.entries
+      render :show
     end
   end
 

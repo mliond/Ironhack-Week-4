@@ -9,10 +9,24 @@
 Project.destroy_all
 puts "----- XXX ------"
 
-num = 25
+Entry.destroy_all
+puts "----- XXX ------"
 
-num.times do |i|
-  Project.create(title: Faker::Address.city, description: Faker::Name.name)
+num = 5
+
+10.times do |i|
+  p = Project.new(title: Faker::Address.city, description: Faker::Name.name)
+  p.save
+  3.times do |k|
+    p.entries.create({
+      hours: rand(0..4),
+      minutes: rand(0..60),
+      start_date: Date.today,
+      project_id: (107+i), 
+      comment: Faker::Hacker.say_something_smart
+      })
+  end
 end
 
 puts "created #{num} new instances of Project"
+puts "created 3 new instances of Entry for each Project"
