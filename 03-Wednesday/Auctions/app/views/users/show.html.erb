@@ -1,0 +1,15 @@
+<h1>User details</h1>
+
+<p>Name: <%= @user.name %></p>
+<p>Email: <%= @user.email %></p>
+<p>Products: 
+  <ul>
+    <% @user.products.each do |product| %>
+      <li>
+        Title: <%= product.title %> - Deadline: <%= product.deadline %>
+      </li>
+    <% end %>
+  </ul>
+
+<%= link_to "Edit user", edit_user_path %>
+<%= link_to "Go back", users_path %>
