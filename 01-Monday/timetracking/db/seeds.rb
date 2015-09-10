@@ -29,7 +29,6 @@ num.times do |i|
       hours: rand(0..4),
       minutes: rand(0..60),
       start_date: Date.today,
-      project_id: (107+i), 
       comment: Faker::Hacker.say_something_smart
       })
   end

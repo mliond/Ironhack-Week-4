@@ -1,0 +1,29 @@
+<h1><%= @product.name %> Details:</h1>
+
+<p>
+  Name: 
+  <%= @product.name %>
+</p>
+
+<p>
+  Description:
+  <%= @product.description %>
+</p>
+
+<p>
+  Deadline:
+  <%= @product.deadline %>
+</p>
+
+<p>
+  Bids: 
+  <ul>
+  <% @product.bids.each do |bid| %>
+    <li>
+      <%= bid.user.name %>: $<%= bid.amount %>
+    </li>
+  <% end %>
+  </ul>
+</p>
+
+<%= link_to "Make a bid", new_product_bid_path(@product) %>

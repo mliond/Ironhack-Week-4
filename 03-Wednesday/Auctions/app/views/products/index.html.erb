@@ -1,0 +1,20 @@
+<h1>All products:</h1>
+
+<table>
+  <tr>
+    <td>Title</td>
+    <td>Created by</td>
+    <td>Description</td>
+    <td>Deadline</td>
+  </tr>
+  <% @products.each do |product| %>
+  <tr>
+    <td>
+    <%= link_to product.name, product_path(product) %>
+    </td>
+    <td><%= product.user.name %></td>
+    <td><%= product.description %></td>
+    <td><%= product.deadline %></td>
+  </tr>
+  <% end %>
+</table>

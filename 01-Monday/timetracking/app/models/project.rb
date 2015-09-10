@@ -1,4 +1,4 @@
-class Project < ActiveRecord::Base
+uclass Project < ActiveRecord::Base
   # validates :title, 
   #   presence: true, 
   #   uniqueness: true, 
