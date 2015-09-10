@@ -9,6 +9,7 @@ class EntriesController < ApplicationController
     @project = Project.find(params[:project_id])
     @entry = @project.entries.new(entry_params)
     if @entry.save
+      flash[:notice] = "Entry #{@entry.id} created successfully"
       redirect_to project_path(@project)
     else
       render :new
@@ -28,6 +29,7 @@ class EntriesController < ApplicationController
   def update
     @entry = Entry.find(params[:id])
     if @entry.update(entry_params)
+      flash[:notice] = "Entry #{@entry.id} edited successfully"
       redirect_to project_path(@entry.project)
     else
       render :edit
