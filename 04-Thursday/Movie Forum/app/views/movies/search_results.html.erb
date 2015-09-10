@@ -1,0 +1,11 @@
+<% if @search.present? %>
+  <%= @search.each do |item| %>
+    <% unless item.poster.nil? %>
+      <p>
+        <img src=<%= item.poster %> alt="" height="200px">
+        <br>
+        <%= item.year %>
+      </p>
+    <% end %>
+  <% end %>
+<% end %>

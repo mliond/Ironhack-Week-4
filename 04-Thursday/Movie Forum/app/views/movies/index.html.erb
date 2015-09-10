@@ -1,0 +1,12 @@
+<h1>Welcome</h1>
+
+<% @movies.each do |movie| %>
+  <p>
+    <img src=<%= movie.poster %> alt="" height="200px">
+    <br>
+    <%= movie.title %>
+  </p>
+<% end %>
+
+<%= link_to "New search", new_movie_path %>
+
