@@ -1,0 +1,19 @@
+<% if @entry.new_record? %>
+  <% form_variable = [@project, @entry] %>
+  <% button_name = "Create Entry" %>
+<% else %>
+  <% form_variable = @entry %>
+  <% button_name = "Edit Entry" %>
+<% end %>
+
+<%= form_for form_variable do |f| %>
+  <%= f.label :hours %>
+  <%= f.number_field :hours %>
+  <%= f.label :minutes %>
+  <%= f.number_field :minutes %>
+  <%= f.label :start_date %>
+  <%= f.date_field :start_date %>
+  <%= f.label :comment %>
+  <%= f.text_area :comment %>
+  <%= f.submit button_name %>
+<% end %>
