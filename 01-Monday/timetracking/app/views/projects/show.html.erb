@@ -8,6 +8,7 @@
 <ul>
   <% @entries.each do |entry| %>
     <li>
+      <strong><%= entry.user.username %>:</strong>
       <%= entry.hours %> hours: <%= entry.minutes %> minutes. Job: <%= entry.comment %>
       <%= link_to "Edit", edit_entry_path(entry) %>
       <%= link_to "Delete", entry_path(entry), method: "DELETE", data: {confirm: 'Are you sure?'} %>
