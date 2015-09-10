@@ -15,6 +15,12 @@ class EntriesController < ApplicationController
     end
   end
 
+  def destroy
+    entry = Entry.find(params[:id])
+    entry.destroy
+    redirect_to project_path(entry.project)
+  end
+
   def edit
     @entry = Entry.find(params[:id])
   end

@@ -2,14 +2,17 @@
 
 <%= form_for @project do |f| %>
   <div>
-  <%= f.label :title %>
-  <%= f.text_field :title %>  
+    <%= f.label :title %>
+    <%= f.text_field :title %>  
   </div>
   <div>
-  <%= f.label :description %>
-  <%= f.text_area :description %>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
   </div>
   <div>
-  <%= f.submit "Submit" %>  
+    <%= f.submit "Submit" %>  
   </div>
 <% end %>
+  <div>
+    <%= link_to "Delete", project_path(@project), method: "DELETE", data: {confirm: 'Are you sure?'} %>
+  </div>
