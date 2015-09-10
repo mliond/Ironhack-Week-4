@@ -34,13 +34,6 @@ ActiveRecord::Schema.define(version: 20150910095732) do
     t.text     "description"
   end
 
-  create_table "tests", force: true do |t|
-    t.string   "title"
-    t.string   "test"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "users", force: true do |t|
     t.string   "username",   null: false
     t.datetime "created_at"
