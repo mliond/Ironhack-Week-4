@@ -10,9 +10,11 @@
   <% @products.each do |product| %>
   <tr>
     <td>
-    <%= link_to product.name, product_path(product) %>
+      <%= link_to product.name, product_path(product) %>
     </td>
-    <td><%= product.user.name %></td>
+    <td>
+      <%= link_to product.user.name, user_path(product.user) %>
+    </td>
     <td><%= product.description %></td>
     <td><%= product.deadline %></td>
   </tr>
