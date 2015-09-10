@@ -1,7 +1,7 @@
 User.destroy_all
 Product.destroy_all
 
-puts "Deleted all users and products"
+puts "Deleted all users and products."
 
 num = 5
 
@@ -16,14 +16,15 @@ num.times do |i|
     u.products.create({
       name: Faker::App.name,
       description: Faker::Hacker.say_something_smart,
-      deadline: Faker::Time.forward(10)
+      deadline: Faker::Time.forward(10),
+      min_price: rand(1..25)
       })
   end
 end
 
 50.times do |i|
   Bid.create({
-    amount: rand(1..25),
+    amount: rand(1..5),
     user_id: User.all.sample.id,
     product_id: Product.all.sample.id
     })

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150910142101) do
+ActiveRecord::Schema.define(version: 20150910154122) do
 
   create_table "bids", force: true do |t|
     t.integer  "amount"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20150910142101) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "min_price"
   end
 
   add_index "products", ["user_id"], name: "index_products_on_user_id"

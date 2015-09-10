@@ -7,8 +7,9 @@ class BidsController < ApplicationController
 
   def create
     @product = Product.find(params[:product_id]) 
+    @highest_bid = @product.bids.sort_by { |k| k["amount"] }.last.amount
     @bid = @product.bids.new(bid_params)
-    if @bid.save 
+    if @bid.amount > @highest_bid && @bid.amount > @product.min_price && @bid.save 
       redirect_to product_path(@product)
     else
       render :new

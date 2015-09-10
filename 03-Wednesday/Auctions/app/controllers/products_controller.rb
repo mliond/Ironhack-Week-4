@@ -21,6 +21,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @highest_bidder = @product.bids.sort_by { |k| k["amount"] }.last.user.name
   end
 
   private
