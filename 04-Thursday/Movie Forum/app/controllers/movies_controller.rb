@@ -16,17 +16,23 @@ class MoviesController < ApplicationController
   end
 
   def create
-    @search = Imdb::Search.new(movie_params[:title]).movies.first
-    @movie = Movie.create({
-      title: @search.title,
-      poster: @search.poster,
-      year: @search.year,
-      synopsis: @search.plot_synopsis
-      })
-    redirect_to movies_path
+    @keyword = movie_params[:title]
+    if Movie.search_db(@keyword).present? 
+      redirect_to movie_path(Movie.search_db(@keyword))
+    else 
+      @search = Imdb::Search.new(@keyword).movies.first
+      @movie = Movie.create({
+        title: @search.title,
+        poster: @search.poster,
+        year: @search.year,
+        synopsis: @search.plot_summary
+        })
+      redirect_to movies_path
+    end
   end
 
   def show 
+    @movie = Movie.find(params[:id])
   end
 
   private
