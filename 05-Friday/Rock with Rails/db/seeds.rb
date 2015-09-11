@@ -23,4 +23,11 @@ num = 25
   end
 end
 
+3.times do |i|
+  User.create({
+    name: Faker::Internet.name,
+    password: "test"
+    })
+end
+
 puts "created #{num} new concerts with 3 comments each."
