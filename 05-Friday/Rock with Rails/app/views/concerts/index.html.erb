@@ -1,0 +1,26 @@
+<h1>All concerts:</h1>
+
+<table>
+  <tr>
+    <td>Band</td>
+    <td>Venue</td>
+    <td>City</td>
+    <td>Date</td>
+    <td>Description</td>
+  </tr>
+  <% @concerts.each do |concert| %>
+  <tr>
+    <td><%= link_to concert.band, concert_path(concert) %></td>
+    <td><%= concert.venue %></td>
+    <td><%= concert.city %></td>
+    <td><%= concert.date %></td>
+    <td><%= concert.description %></td>
+  </tr>
+  <% end %>
+</table>
+
+<p>
+  <%= link_to "Concerts today", concerts_today_path %>
+  <br>
+  <%= link_to "Concerts this month", concerts_month_path %>
+</p>

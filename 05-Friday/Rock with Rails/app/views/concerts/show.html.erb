@@ -1,0 +1,19 @@
+<h1>Concert details</h1>
+
+<p>Band: <%= @concert.band %></p>
+<p>Venue: <%= @concert.venue %></p>
+<p>City: <%= @concert.city %></p>
+<p>Date: <%= @concert.date %></p>
+<p>Description: <%= @concert.description %></p>
+
+<%= link_to "Go back", concerts_path %>
+
+<h3>Comments:</h3>
+
+<ul>
+  <% @concert.comments.each do |comment| %>
+    <li>
+      <%= comment.name %>: <%= comment.text %>
+    </li>
+  <% end %>
+</ul>
