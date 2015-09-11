@@ -1,5 +1,14 @@
 <h1>Welcome</h1>
 
+<h3>New search:</h3>
+
+<form action=<%= movies_search_results_path %> method="get">
+  Search:<br>
+  <input type="text" name="keyword">
+  <br>
+  <input type="submit" value="Submit">
+</form>
+
 <% @movies.each do |movie| %>
   <p>
     <img src=<%= movie.poster %> alt="" height="200px">

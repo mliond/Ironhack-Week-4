@@ -1,11 +1,12 @@
-<% if @search.present? %>
-  <%= @search.each do |item| %>
-    <% unless item.poster.nil? %>
-      <p>
+<% if @twenty_results.present? %>
+  <% @twenty_results.each do |item| %>
+    <p>
+      <form action="/movies/<%= item %>" method="post">
         <img src=<%= item.poster %> alt="" height="200px">
         <br>
-        <%= item.year %>
-      </p>
-    <% end %>
+        <input type="hidden" name="item" value="<%= item %>">
+        <input type="submit" value="<%= item.title %>">
+      </form>
+    </p>
   <% end %>
 <% end %>
