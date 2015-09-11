@@ -1,26 +1,25 @@
-<div class="jumbotron">
+<div class="top-box jumbotron">
   <h1><%= @heading %></h1>
   <!-- <p>...</p> -->
   <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p> -->
 </div>
 
-<table>
-  <tr>
-    <td>Band</td>
-    <td>Venue</td>
-    <td>City</td>
-    <td>Date</td>
-    <td>Price</td>
-    <td>Description</td>
-  </tr>
-  <% @concerts.each do |concert| %>
-  <tr>
-    <td><%= link_to concert.band, concert_path(concert) %></td>
-    <td><%= concert.venue %></td>
-    <td><%= concert.city %></td>
-    <td><%= concert.date %></td>
-    <td><%= concert.price %></td>
-    <td><%= concert.description %></td>
-  </tr>
-  <% end %>
-</table>
+<% @concerts.each do |concert| %>
+  <div class="media">
+    <div class="media-left">
+      <a href="/concerts/<%= concert.id %>">
+        <img class="media-object" src=<%= concert.poster %> alt="..." height="64px">
+      </a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">
+      <%= link_to "#{concert.band} @ #{concert.venue}", concert_path(concert) %>
+      </h4>
+      <%= concert.date.strftime("%d.%m %H:%M h") %>, <%= concert.city %>:
+      <br>
+      <%= concert.description %>.
+      <br>
+      Price: <%= concert.price %>€.
+    </div>
+  </div>
+<% end %>

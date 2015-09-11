@@ -11,7 +11,8 @@ num = 25
     city: Faker::Address.city,
     date: Faker::Time.between(DateTime.now - 2, DateTime.now + 2),
     price: rand(5..50),
-    description: Faker::Hacker.say_something_smart
+    description: Faker::Hacker.say_something_smart,
+    poster: Faker::Avatar.image
     })
   c.save
   3.times do |k|

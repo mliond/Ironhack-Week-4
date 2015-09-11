@@ -23,16 +23,15 @@
   </head>
   <body>
   
-  <header>
-    <div class="container">
+  <div class="container">
+    
+    <header>
       <div class="row">
-        Header
+        <img src="http://blog.songkick.com/wp-content/uploads/2012/06/songkick_tourbox_logo.png" alt="">
       </div>
-    </div>
-  </header>
+    </header>
 
-  <main>
-    <div class="container">
+    <main>
       <div class="row">
         <div class="col-lg-2">
           <%= render 'sidebar' %>
@@ -41,17 +40,18 @@
           <%= yield %>
         </div>
       </div>
-    </div>
-  </main>
+    </main>
 
-  <footer>
-    <div class="container">
+    <footer>
       <div class="row">
-        Footer
+        <p>
+          copyright by SongKick Tourbox, 2015
+        </p>
       </div>
-    </div>
-  </footer>
-    
+    </footer>
+      
+  </div>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

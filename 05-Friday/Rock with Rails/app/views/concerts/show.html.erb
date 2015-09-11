@@ -3,17 +3,22 @@
 <p>Band: <%= @concert.band %></p>
 <p>Venue: <%= @concert.venue %></p>
 <p>City: <%= @concert.city %></p>
-<p>Date: <%= @concert.date %></p>
+<p>Date: <%= @concert.date.strftime("%d.%m %H:%M h") %></p>
 <p>Description: <%= @concert.description %></p>
 
 <%= link_to "Go back", concerts_path %>
 
 <h3>Comments:</h3>
 
-<ul>
-  <% @concert.comments.each do |comment| %>
-    <li>
-      <%= comment.name %>: <%= comment.text %>
-    </li>
-  <% end %>
-</ul>
+<% @concert.comments.each do |comment| %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        <%= comment.name %>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <%= comment.text %>
+    </div>
+  </div>
+<% end %>
