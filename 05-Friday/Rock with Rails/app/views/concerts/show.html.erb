@@ -1,17 +1,15 @@
-<h1>Concert details</h1>
-
-<p>Band: <%= @concert.band %></p>
-<p>Venue: <%= @concert.venue %></p>
-<p>City: <%= @concert.city %></p>
-<p>Date: <%= @concert.date.strftime("%d.%m %H:%M h") %></p>
-<p>Description: <%= @concert.description %></p>
-
-<%= link_to "Go back", concerts_path %>
+<div class="jumbotron jumbotron-danger">
+  <h1><%= @concert.band %> @ <%= @concert.venue %></h1>
+  <p><%= @concert.date.strftime("%d.%m %H:%M h") %>, <%= @concert.city %>:</p>
+  <p><%= @concert.description %></p>
+  <p>Price: <%= @concert.price %>€.</p>
+  <p><a class="btn btn-danger btn-lg" href="#" role="button">Buy tickets</a></p>
+</div>
 
 <h3>Comments:</h3>
 
 <% @concert.comments.each do |comment| %>
-  <div class="panel panel-default">
+  <div class="panel panel-danger">
     <div class="panel-heading">
       <h3 class="panel-title">
         <%= comment.name %>

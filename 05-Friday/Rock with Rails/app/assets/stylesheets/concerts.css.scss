@@ -2,7 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.top-box {
-  background-color: rgba(248, 0, 70, 0.15);
+.jumbotron h1 {
+  color: white;
+}
 
+header {
+  height: 60px;
+  background-color: white;
+  display: flex; 
+  flex-direction: row;
+  align-content: center;
+}
+
+header img {
+  height: 30px;
+  margin-left: 15px;
+}
+
+header .user-sign {
+  margin-right: 10px;
 }
