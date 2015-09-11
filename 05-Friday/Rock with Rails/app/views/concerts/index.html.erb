@@ -1,4 +1,8 @@
-<h1>All concerts:</h1>
+<div class="jumbotron">
+  <h1><%= @heading %></h1>
+  <!-- <p>...</p> -->
+  <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p> -->
+</div>
 
 <table>
   <tr>
@@ -6,6 +10,7 @@
     <td>Venue</td>
     <td>City</td>
     <td>Date</td>
+    <td>Price</td>
     <td>Description</td>
   </tr>
   <% @concerts.each do |concert| %>
@@ -14,13 +19,8 @@
     <td><%= concert.venue %></td>
     <td><%= concert.city %></td>
     <td><%= concert.date %></td>
+    <td><%= concert.price %></td>
     <td><%= concert.description %></td>
   </tr>
   <% end %>
 </table>
-
-<p>
-  <%= link_to "Concerts today", concerts_today_path %>
-  <br>
-  <%= link_to "Concerts this month", concerts_month_path %>
-</p>
