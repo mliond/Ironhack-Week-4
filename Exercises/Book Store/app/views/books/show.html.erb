@@ -5,6 +5,13 @@
 <p>Price: <%= @book.price %></p>
 
 <p>
+  Average Stars: 
+  <% @average_stars.times do |i| %>
+    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+
+  <% end %>
+</p>
+<p>
   Reviews:
   <ul>
     <% @book.reviews.each do |review| %>
